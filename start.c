@@ -170,6 +170,14 @@ PrintFloat:
 	j	$31
 	.end PrintFloat
 
+	.globl ReadFloat
+	.ent ReadFloat
+ReadFloat:
+	addiu $2, $0, SC_ReadFloat
+	syscall
+	j	$31
+	.end ReadFloat
+
 /* dummy function to keep gcc happy */
         .globl  __main
         .ent    __main

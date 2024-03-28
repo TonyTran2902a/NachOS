@@ -33,6 +33,7 @@
 #define SC_PrintChar 14
 #define SC_PrintString	16
 #define SC_PrintFloat	20
+#define SC_ReadFloat	22
 #define SC_Sub 		43
 
 #ifndef IN_ASM
@@ -97,7 +98,7 @@ void Create(char *name);
 /* Open the Nachos file "name", and return an "OpenFileId" that can 
  * be used to read and write to the file.
  */
-OpenFileId Open(char *name);
+OpenFileId Open(char *name, int type);
 
 /* Write "size" bytes from "buffer" to the open file. */
 void Write(char *buffer, int size, OpenFileId id);
@@ -137,7 +138,9 @@ void PrintChar(char character);
 
 void PrintString(char buffer[]);
 
-void PrintFloat(float number);
+void PrintFloat(float *number);
+
+float *ReadFloat();
 
 #endif /* IN_ASM */
 
